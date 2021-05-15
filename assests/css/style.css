@@ -1,0 +1,10 @@
+:root {
+--main: x(color);
+--section: x(color);
+--dark: x(color);
+--light: x(color);
+}
+
+header {
+ text-align: center;
+}
