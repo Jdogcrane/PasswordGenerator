@@ -1,5 +1,5 @@
-
 var verify;
+
 // password criteria obj
 var password = {
 length: 8,
@@ -15,19 +15,19 @@ uniques = ["`","~","!", "@","#","$","%","^","&","*","(",")","-","_","=","+","[",
 // all numbers the generator will use
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-
+// Password Generator Function
 function createPassword() {
 
 // ask for character range
-verify = prompt("Please insert the password length you desire between 8-128. If you do not wish to choose 8 will be the default number");
+password.length = prompt("Please insert the password length you desire between 8-128. If you do not wish to choose 8 will be the default number");
 
 // if user does not specify sets length to 8
 if (!verify) {
  alert("you need a value. I have not figured out how to default yet");
 
  // if the number does not fit the allowed criteria then prompt will be repeated
-} else if (verify < 8 || verify > 128) {
-verify = prompt("Please insert the password length you desire between 8-128. If you do not wish to choose 8 will be the default number");
+} else if (password.length < 8 || password.length > 128) {
+password.length = prompt("Please insert the password length you desire between 8-128. If you do not wish to choose 8 will be the default number");
 
 
 } else {
@@ -35,4 +35,21 @@ password.numeric = confirm("Want numbers in the password?");
 password.special = confirm("Want special characters in the password?");
 password.uppercase = confirm("Want uppercase in the password?");
 };
+
+
+// if user wants password with numeric and special and uppercase then do = grab list of numbers and special characters and uppercase. 
+//Then add 1 from selected lists into a new list called generatedPassword until the length amount is equal to the requested amount.
+
+// if user wants password with numeric and special and no uppercase then do =
+//Then add 1 from selected lists into a new list called generatedPassword until the length amount is equal to the requested length.
+
+// if user wants password with numeric and no special and no uppercase then do =
+//Then add 1 from selected lists into a new list called generatedPassword until the length amount is equal to the requested length.
+
+// if user wants password with no numeric and no special and no uppercase then do =
+//Then add 1 from selected lists into a new list called generatedPassword until the length amount is equal to the requested length.
+
+// if user does not want any. then add letters randomly from the list into a new list called generatedPassword until the length amount is equal to the requested length.
+
+
 }
