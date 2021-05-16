@@ -8,16 +8,15 @@ var password = {
  generatedPassword: [],
 };
 
-// Puts everything that has been set to true based off confirms into one array
-var container = [];
-// all letters the generator will use
-letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// all capital letters the generator will use
-capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// all special characters the generator will use
-uniques = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", " ? ", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-// all numbers the generator will use
-numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var container = []; // Puts everything that has been set to true based off confirms into one array
+
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; // all letters the generator will use
+
+capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // all capital letters the generator will use
+
+uniques = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", " ? ", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];// all special characters the generator will use
+
+numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];// all numbers the generator will use
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
