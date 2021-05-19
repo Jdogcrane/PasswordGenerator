@@ -7,24 +7,29 @@ var password = {
     lowercase: false
 };
 
+// all letters the generator will use
+letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; // all letters the generator will use
+// all capital letters the generator will use
+capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; // all capital letters the generator will use
+// all special characters the generator will use
+uniques = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", " ? ", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 
-uniques = [" ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", " ? ", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];// all special characters the generator will use
-
-numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];// all numbers the generator will use
+// all numbers the generator will use
+numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); {
 }
+
 // Write password to the #password input
 function writePassword() {
     var passwordFinal = createPassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = passwordFinal;
 }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -32,14 +37,16 @@ generateBtn.addEventListener("click", writePassword);
 function createPassword() {
     document.getElementById("password");
 
+    // Puts everything that has been set to true based off confirms into one array
+    var container = [];
+
+    // Puts everything generated password so that it clears each time
+    var generatedPassword = [];
+
     // if user does not input anything sets length to 8
     // rounds number if number is decimal
     password.length = Math.round(prompt("Please insert the password length you desire between 8-128. If you do not wish to choose 8 will be set as the length.")) || 8;
 
-    var container = []; // Puts everything that has been set to true based off confirms into one array
-    // Localized generated password so that it clears each time
-
-    var generatedPassword = [];
 
     // prevents password from being too small or big
     if (password.length < 8 || password.length > 128) {
@@ -49,11 +56,14 @@ function createPassword() {
     } else {
         // if user wants numeric then password.numeric is switched to true
         password.numeric = confirm("Do you want numbers in the password?");
+
         // if user wants special then password.special is switched to true
         password.special = confirm("Do you want special characters in the password?");
-        // if user wants special then password.uppercase is switched to true
+
+        // if user wants uppercase then password.uppercase is switched to true
         password.uppercase = confirm("Do you want uppercase in the password?");
-        // if user wants special then password.lowercase is switched to true
+
+        // if user wants lowercase then password.lowercase is switched to true
         password.lowercase = confirm("Do you want lowercase in the password?");
     };
 
